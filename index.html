@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillGraph AI - From Resume to Role-Ready</title>
+    <meta name="description" content="SkillGraph AI: An AI-powered onboarding platform to analyze your resume against job descriptions, identifying skill gaps and providing a learning roadmap.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for modern icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo-container">
+                <i class="ph-fill ph-graph"></i>
+                <span class="logo-text">SkillGraph <span>AI</span></span>
+            </div>
+            
+            <nav class="nav-menu">
+                <a href="#home" class="nav-item active" data-target="view-home">
+                    <i class="ph ph-house"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#analysis" class="nav-item" data-target="view-analysis">
+                    <i class="ph ph-chart-bar"></i>
+                    <span>Analysis</span>
+                </a>
+                <a href="#roadmap" class="nav-item" data-target="view-roadmap">
+                    <i class="ph ph-map-trifold"></i>
+                    <span>Roadmap</span>
+                </a>
+                <a href="#progress" class="nav-item" data-target="view-progress">
+                    <i class="ph ph-target"></i>
+                    <span>Progress</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">
+                        <i class="ph-fill ph-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Guest User</span>
+                        <span class="user-role">Explorer</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Landing / Home View -->
+            <section id="view-home" class="view-section active">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1>From Resume to <span>Role-Ready</span></h1>
+                        <p>Upload your resume and a target job description. Our AI will analyze your profile, find the gaps, and build a personalized learning roadmap to get you hired.</p>
+                    </div>
+                </div>
+                
+                <div class="upload-section">
+                    <div class="upload-card" id="upload-resume">
+                        <div class="upload-icon-wrapper">
+                            <i class="ph ph-file-text"></i>
+                        </div>
+                        <h3>Upload Resume</h3>
+                        <p>PDF, DOCX up to 5MB</p>
+                        <button class="btn btn-primary">Select File</button>
+                    </div>
+                    
+                    <div class="upload-card" id="upload-jd">
+                        <div class="upload-icon-wrapper">
+                            <i class="ph ph-briefcase"></i>
+                        </div>
+                        <h3>Target Job Description</h3>
+                        <p>Paste text or upload file</p>
+                        <button class="btn btn-secondary">Add JD</button>
+                    </div>
+                </div>
+                
+                <div class="action-row">
+                    <button class="btn btn-large btn-accent" id="btn-analyze" disabled>
+                        Analyze Profile <i class="ph ph-sparkle"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Dashboard / Analysis View -->
+            <section id="view-analysis" class="view-section">
+                <div class="view-header">
+                    <h2>Skill Gap Analysis</h2>
+                    <p>We've compared your resume against the target job description.</p>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <!-- Card 1: Extracted Skills -->
+                    <div class="card col-span-2">
+                        <div class="card-header">
+                            <h3>Your Acquired Skills</h3>
+                            <span class="badge badge-success">Match: 65%</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="skill-chips">
+                                <span class="chip chip-acquired"><i class="ph ph-check-circle"></i> JavaScript</span>
+                                <span class="chip chip-acquired"><i class="ph ph-check-circle"></i> React.js</span>
+                                <span class="chip chip-acquired"><i class="ph ph-check-circle"></i> HTML/CSS</span>
+                                <span class="chip chip-acquired"><i class="ph ph-check-circle"></i> Git</span>
+                                <span class="chip chip-acquired"><i class="ph ph-check-circle"></i> Agile</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Card 2: Skill Gap (Missing) -->
+                    <div class="card col-span-2">
+                        <div class="card-header">
+                            <h3>Missing Skills (To Learn)</h3>
+                            <span class="badge badge-warning">Action Required</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="skill-chips">
+                                <span class="chip chip-missing"><i class="ph ph-warning-circle"></i> TypeScript</span>
+                                <span class="chip chip-missing"><i class="ph ph-warning-circle"></i> Next.js</span>
+                                <span class="chip chip-missing"><i class="ph ph-warning-circle"></i> GraphQL</span>
+                                <span class="chip chip-missing"><i class="ph ph-warning-circle"></i> Jest/Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!-- Card 3: Bar Chart (Mocked with CSS) -->
+                    <div class="card col-span-4">
+                        <div class="card-header">
+                            <h3>Readiness Comparison</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="bar-chart-container">
+                                <div class="chart-bar-group">
+                                    <div class="bar-label">Frontend Fundamentals</div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill bg-success" style="width: 90%;"></div>
+                                    </div>
+                                    <div class="bar-value">90%</div>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="bar-label">Modern Frameworks</div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill bg-warning" style="width: 50%;"></div>
+                                    </div>
+                                    <div class="bar-value">50%</div>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="bar-label">Testing & QA</div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill bg-danger" style="width: 20%;"></div>
+                                    </div>
+                                    <div class="bar-value">20%</div>
+                                </div>
+                                <div class="chart-bar-group">
+                                    <div class="bar-label">API Integration</div>
+                                    <div class="bar-track">
+                                        <div class="bar-fill bg-success" style="width: 75%;"></div>
+                                    </div>
+                                    <div class="bar-value">75%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learning Roadmap View -->
+            <section id="view-roadmap" class="view-section">
+                <div class="view-header">
+                    <h2>Learning Roadmap</h2>
+                    <p>Your personalized path to mastering the missing skills.</p>
+                </div>
+                
+                <div class="roadmap-timeline">
+                    <!-- Node 1 -->
+                    <div class="roadmap-node completed">
+                        <div class="node-icon"><i class="ph ph-check"></i></div>
+                        <div class="node-content card">
+                            <h4>React Fundamentals</h4>
+                            <p>Components, State, Props</p>
+                        </div>
+                    </div>
+                    <!-- Node 2 -->
+                    <div class="roadmap-node active">
+                        <div class="node-icon"><i class="ph-fill ph-circle"></i></div>
+                        <div class="node-content card">
+                            <div class="flex-between">
+                                <h4>Next.js Basics</h4>
+                                <span class="badge badge-warning">In Progress</span>
+                            </div>
+                            <p>App Router, SSR, SSG</p>
+                            <div class="resource-card mt-3">
+                                <i class="ph ph-video"></i>
+                                <div>
+                                    <h5>Next.js Crash Course</h5>
+                                    <span>YouTube • 2h 45m</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Node 3 -->
+                    <div class="roadmap-node pending">
+                        <div class="node-icon"><i class="ph ph-lock-key"></i></div>
+                        <div class="node-content card">
+                            <h4>TypeScript for React</h4>
+                            <p>Interfaces, Types, Generics</p>
+                        </div>
+                    </div>
+                    <!-- Node 4 -->
+                    <div class="roadmap-node pending">
+                        <div class="node-icon"><i class="ph ph-lock-key"></i></div>
+                        <div class="node-content card">
+                            <h4>GraphQL Integration</h4>
+                            <p>Apollo Client, Queries, Mutations</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Tracking View -->
+            <section id="view-progress" class="view-section">
+                <div class="view-header">
+                    <h2>Your Progress</h2>
+                    <p>Track your skill acquisition journey.</p>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <div class="card col-span-2 progress-card">
+                        <div class="card-body">
+                            <div class="circular-progress">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg"
+                                        d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    />
+                                    <path class="circle"
+                                        stroke-dasharray="35, 100"
+                                        d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    />
+                                    <text x="18" y="20.35" class="percentage">35%</text>
+                                </svg>
+                            </div>
+                            <h4>Overall Readiness</h4>
+                            <p class="mt-2">You have acquired 7 out of 20 required skills.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card col-span-2">
+                        <div class="card-header">
+                            <h3>Skill Stats</h3>
+                        </div>
+                        <div class="card-body stat-list">
+                            <div class="stat-item">
+                                <div class="stat-icon bg-success-light text-success"><i class="ph ph-check"></i></div>
+                                <div class="stat-info">
+                                    <span class="stat-value">7</span>
+                                    <span class="stat-label">Completed Skills</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon bg-warning-light text-warning"><i class="ph ph-hourglass-low"></i></div>
+                                <div class="stat-info">
+                                    <span class="stat-value">2</span>
+                                    <span class="stat-label">In Progress</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon bg-danger-light text-danger"><i class="ph ph-lock-key"></i></div>
+                                <div class="stat-info">
+                                    <span class="stat-value">11</span>
+                                    <span class="stat-label">Pending Skills</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- AI Mentor Chatbot Button -->
+        <button class="chatbot-trigger" id="chatbot-trigger">
+            <i class="ph-fill ph-robot"></i>
+        </button>
+
+        <!-- Chatbot Popover -->
+        <div class="chatbot-popover" id="chatbot-popover">
+            <div class="chat-header">
+                <div>
+                    <h4>AI Mentor</h4>
+                    <span>SkillGraph Assistant</span>
+                </div>
+                <button class="close-chat" id="close-chat"><i class="ph ph-x"></i></button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message bot">
+                    👋 Hi! I'm your AI Mentor. I noticed you need to learn Next.js. Would you like me to recommend a tailored learning path?
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Type your message...">
+                <button><i class="ph-fill ph-paper-plane-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
